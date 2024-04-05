@@ -11,6 +11,7 @@ const countries = [
     country_territorial_extension: 2780400,
     country_borders: ["Bolivia", "Brazil", "Chile", "Paraguay", "Uruguay"],
     country_currency: "Argentine peso",
+    population: 45195777,
   },
   {
     id: 2,
@@ -19,6 +20,7 @@ const countries = [
     country_territorial_extension: 1098581,
     country_borders: ["Argentina", "Brazil", "Chile", "Paraguay", "Peru"],
     country_currency: "Bolivian boliviano",
+    population: 11673021,
   },
   {
     id: 3,
@@ -37,6 +39,7 @@ const countries = [
       "Venezuela",
     ],
     country_currency: "Brazilian real",
+    population: 213993437,
   },
   {
     id: 4,
@@ -45,6 +48,7 @@ const countries = [
     country_territorial_extension: 756102,
     country_borders: ["Argentina", "Bolivia", "Peru"],
     country_currency: "Chilean peso",
+    population: 19116201,
   },
   {
     id: 5,
@@ -53,6 +57,7 @@ const countries = [
     country_territorial_extension: 1141748,
     country_borders: ["Brazil", "Ecuador", "Panama", "Peru", "Venezuela"],
     country_currency: "Colombian peso",
+    population: 50882891,
   },
   {
     id: 6,
@@ -61,6 +66,7 @@ const countries = [
     country_territorial_extension: 283561,
     country_borders: ["Colombia", "Peru"],
     country_currency: "United States dollar",
+    population: 17643054,
   },
   {
     id: 7,
@@ -69,6 +75,7 @@ const countries = [
     country_territorial_extension: 214969,
     country_borders: ["Brazil", "Suriname", "Venezuela"],
     country_currency: "Guyanese dollar",
+    population: 787584,
   },
   {
     id: 8,
@@ -77,6 +84,7 @@ const countries = [
     country_territorial_extension: 406752,
     country_borders: ["Argentina", "Bolivia", "Brazil"],
     country_currency: "Paraguayan guaraní",
+    population: 7132538,
   },
   {
     id: 9,
@@ -85,6 +93,7 @@ const countries = [
     country_territorial_extension: 1285216,
     country_borders: ["Bolivia", "Brazil", "Chile", "Colombia", "Ecuador"],
     country_currency: "Peruvian sol",
+    population: 32971854,
   },
   {
     id: 10,
@@ -93,6 +102,7 @@ const countries = [
     country_territorial_extension: 163821,
     country_borders: ["Brazil", "Guyana", "French Guiana"],
     country_currency: "Surinamese dollar",
+    population: 586632,
   },
   {
     id: 11,
@@ -101,6 +111,7 @@ const countries = [
     country_territorial_extension: 176215,
     country_borders: ["Argentina", "Brazil"],
     country_currency: "Uruguayan peso",
+    population: 3473730,
   },
   {
     id: 12,
@@ -109,6 +120,7 @@ const countries = [
     country_territorial_extension: 916445,
     country_borders: ["Brazil", "Colombia", "Guyana"],
     country_currency: "Venezuelan bolívar",
+    population: 28435943,
   },
   {
     id: 13,
@@ -117,6 +129,7 @@ const countries = [
     country_territorial_extension: 51100,
     country_borders: ["Nicaragua", "Panama"],
     country_currency: "Costa Rican colón",
+    population: 5126228,
   },
   {
     id: 14,
@@ -125,6 +138,7 @@ const countries = [
     country_territorial_extension: 109884,
     country_borders: [],
     country_currency: "Cuban peso",
+    population: 11338138,
   },
   {
     id: 15,
@@ -133,6 +147,7 @@ const countries = [
     country_territorial_extension: 48670,
     country_borders: ["Haiti"],
     country_currency: "Dominican peso",
+    population: 10766998,
   },
   {
     id: 16,
@@ -141,6 +156,7 @@ const countries = [
     country_territorial_extension: 21041,
     country_borders: ["Guatemala", "Honduras"],
     country_currency: "United States dollar",
+    population: 6704864,
   },
   {
     id: 17,
@@ -149,6 +165,7 @@ const countries = [
     country_territorial_extension: 108889,
     country_borders: ["Belize", "El Salvador", "Honduras", "Mexico"],
     country_currency: "Guatemalan quetzal",
+    population: 17679735,
   },
   {
     id: 18,
@@ -157,6 +174,7 @@ const countries = [
     country_territorial_extension: 27750,
     country_borders: ["Dominican Republic"],
     country_currency: "Haitian gourde",
+    population: 11402528,
   },
   {
     id: 19,
@@ -165,6 +183,7 @@ const countries = [
     country_territorial_extension: 112492,
     country_borders: ["El Salvador", "Guatemala", "Nicaragua"],
     country_currency: "Honduran lempira",
+    population: 9746117,
   },
   {
     id: 20,
@@ -173,6 +192,7 @@ const countries = [
     country_territorial_extension: 1967138,
     country_borders: ["Belize", "Guatemala", "United States"],
     country_currency: "Mexican peso",
+    population: 127792286,
   },
   {
     id: 21,
@@ -181,6 +201,7 @@ const countries = [
     country_territorial_extension: 130373,
     country_borders: ["Costa Rica", "Honduras"],
     country_currency: "Nicaraguan córdoba",
+    population: 6545502,
   },
   {
     id: 22,
@@ -189,8 +210,10 @@ const countries = [
     country_territorial_extension: 75417,
     country_borders: ["Colombia", "Costa Rica"],
     country_currency: "United States dollar",
+    population: 4314767,
   },
 ];
+
 app.get("/", (req, res) => res.send(countries));
 
 app.get("/:id", (req, res) => {
