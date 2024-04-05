@@ -1,0 +1,202 @@
+const express = require("express");
+const app = express();
+
+app.use(express.json());
+
+const countries = [
+  {
+    id: 1,
+    country_name: "Argentina",
+    country_capital: "Buenos Aires",
+    country_territorial_extension: 2780400,
+    country_borders: ["Bolivia", "Brazil", "Chile", "Paraguay", "Uruguay"],
+    country_currency: "Argentine peso",
+  },
+  {
+    id: 2,
+    country_name: "Bolivia",
+    country_capital: "Sucre",
+    country_territorial_extension: 1098581,
+    country_borders: ["Argentina", "Brazil", "Chile", "Paraguay", "Peru"],
+    country_currency: "Bolivian boliviano",
+  },
+  {
+    id: 3,
+    country_name: "Brazil",
+    country_capital: "Brasília",
+    country_territorial_extension: 8515767,
+    country_borders: [
+      "Argentina",
+      "Bolivia",
+      "Colombia",
+      "Guyana",
+      "Paraguay",
+      "Peru",
+      "Suriname",
+      "Uruguay",
+      "Venezuela",
+    ],
+    country_currency: "Brazilian real",
+  },
+  {
+    id: 4,
+    country_name: "Chile",
+    country_capital: "Santiago",
+    country_territorial_extension: 756102,
+    country_borders: ["Argentina", "Bolivia", "Peru"],
+    country_currency: "Chilean peso",
+  },
+  {
+    id: 5,
+    country_name: "Colombia",
+    country_capital: "Bogotá",
+    country_territorial_extension: 1141748,
+    country_borders: ["Brazil", "Ecuador", "Panama", "Peru", "Venezuela"],
+    country_currency: "Colombian peso",
+  },
+  {
+    id: 6,
+    country_name: "Ecuador",
+    country_capital: "Quito",
+    country_territorial_extension: 283561,
+    country_borders: ["Colombia", "Peru"],
+    country_currency: "United States dollar",
+  },
+  {
+    id: 7,
+    country_name: "Guyana",
+    country_capital: "Georgetown",
+    country_territorial_extension: 214969,
+    country_borders: ["Brazil", "Suriname", "Venezuela"],
+    country_currency: "Guyanese dollar",
+  },
+  {
+    id: 8,
+    country_name: "Paraguay",
+    country_capital: "Asunción",
+    country_territorial_extension: 406752,
+    country_borders: ["Argentina", "Bolivia", "Brazil"],
+    country_currency: "Paraguayan guaraní",
+  },
+  {
+    id: 9,
+    country_name: "Peru",
+    country_capital: "Lima",
+    country_territorial_extension: 1285216,
+    country_borders: ["Bolivia", "Brazil", "Chile", "Colombia", "Ecuador"],
+    country_currency: "Peruvian sol",
+  },
+  {
+    id: 10,
+    country_name: "Suriname",
+    country_capital: "Paramaribo",
+    country_territorial_extension: 163821,
+    country_borders: ["Brazil", "Guyana", "French Guiana"],
+    country_currency: "Surinamese dollar",
+  },
+  {
+    id: 11,
+    country_name: "Uruguay",
+    country_capital: "Montevideo",
+    country_territorial_extension: 176215,
+    country_borders: ["Argentina", "Brazil"],
+    country_currency: "Uruguayan peso",
+  },
+  {
+    id: 12,
+    country_name: "Venezuela",
+    country_capital: "Caracas",
+    country_territorial_extension: 916445,
+    country_borders: ["Brazil", "Colombia", "Guyana"],
+    country_currency: "Venezuelan bolívar",
+  },
+  {
+    id: 13,
+    country_name: "Costa Rica",
+    country_capital: "San José",
+    country_territorial_extension: 51100,
+    country_borders: ["Nicaragua", "Panama"],
+    country_currency: "Costa Rican colón",
+  },
+  {
+    id: 14,
+    country_name: "Cuba",
+    country_capital: "Havana",
+    country_territorial_extension: 109884,
+    country_borders: [],
+    country_currency: "Cuban peso",
+  },
+  {
+    id: 15,
+    country_name: "Dominican Republic",
+    country_capital: "Santo Domingo",
+    country_territorial_extension: 48670,
+    country_borders: ["Haiti"],
+    country_currency: "Dominican peso",
+  },
+  {
+    id: 16,
+    country_name: "El Salvador",
+    country_capital: "San Salvador",
+    country_territorial_extension: 21041,
+    country_borders: ["Guatemala", "Honduras"],
+    country_currency: "United States dollar",
+  },
+  {
+    id: 17,
+    country_name: "Guatemala",
+    country_capital: "Guatemala City",
+    country_territorial_extension: 108889,
+    country_borders: ["Belize", "El Salvador", "Honduras", "Mexico"],
+    country_currency: "Guatemalan quetzal",
+  },
+  {
+    id: 18,
+    country_name: "Haiti",
+    country_capital: "Port-au-Prince",
+    country_territorial_extension: 27750,
+    country_borders: ["Dominican Republic"],
+    country_currency: "Haitian gourde",
+  },
+  {
+    id: 19,
+    country_name: "Honduras",
+    country_capital: "Tegucigalpa",
+    country_territorial_extension: 112492,
+    country_borders: ["El Salvador", "Guatemala", "Nicaragua"],
+    country_currency: "Honduran lempira",
+  },
+  {
+    id: 20,
+    country_name: "Mexico",
+    country_capital: "Mexico City",
+    country_territorial_extension: 1967138,
+    country_borders: ["Belize", "Guatemala", "United States"],
+    country_currency: "Mexican peso",
+  },
+  {
+    id: 21,
+    country_name: "Nicaragua",
+    country_capital: "Managua",
+    country_territorial_extension: 130373,
+    country_borders: ["Costa Rica", "Honduras"],
+    country_currency: "Nicaraguan córdoba",
+  },
+  {
+    id: 22,
+    country_name: "Panama",
+    country_capital: "Panama City",
+    country_territorial_extension: 75417,
+    country_borders: ["Colombia", "Costa Rica"],
+    country_currency: "United States dollar",
+  },
+];
+app.get("/", (req, res) => res.send(countries));
+
+app.get("/:id", (req, res) => {
+  const country = countries.find((item) => item.id === parseInt(req.params.id));
+  if (!country) return res.status(404).send("The country was not found");
+  res.send(country);
+});
+
+module.exports = app;
